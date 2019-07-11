@@ -1,0 +1,25 @@
+<phpunit>
+    <php>
+        <var name="DB_DRIVER" value="pdo_mysql" />
+        <var name="DB_USER" value="user" />
+        <var name="DB_PASSWORD" value="***" />
+        <var name="DB_DBNAME" value="role_test" />
+        <var name="DB_HOST" value="localhost" />
+    </php>
+
+    <testsuites>
+        <testsuite name="Auth Testing">
+            <directory suffix=".php">tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src/</directory>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-html" target="/tmp/report" lowUpperBound="35" highLowerBound="70"/>
+    </logging>
+</phpunit>

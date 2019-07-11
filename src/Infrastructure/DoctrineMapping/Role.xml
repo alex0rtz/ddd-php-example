@@ -1,0 +1,13 @@
+<doctrine-mapping>
+    <entity name="Auth\Domain\Entity\Role">
+
+        <id name="id" type="string" length="36">
+            <generator strategy="SEQUENCE"/>
+            <sequence-generator sequence-name="role_seq" allocation-size="5" initial-value="1"/>
+        </id>
+
+        <field name="name" type="string" length="50"/>
+
+        <one-to-many field="permissions" target-entity="Permission" mapped-by="role"/>
+    </entity>
+</doctrine-mapping>
